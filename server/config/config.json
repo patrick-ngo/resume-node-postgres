@@ -1,6 +1,11 @@
 {
   "development": {
-    "use_env_variable": "DATABASE_URL"
+    "username": "gdnnutlw",
+    "password": "qG_6KxQClEGTFsPz4LI4sZisPxxGexv5",
+    "database": "gdnnutlw",
+    "host": "horton.elephantsql.com",
+    "port": 5432,
+    "dialect": "postgres"
   },
   "test": {
     "username": "waiyaki",
