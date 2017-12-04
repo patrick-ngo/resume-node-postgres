@@ -1,6 +1,8 @@
 const Job = require('../models').Job;
 
 module.exports = {
+
+  //create a job for a resume by id
   create(req, res) {
     return Job
       .create({
@@ -18,6 +20,7 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
+  //update a job by for a resume id
   update(req, res) {
     return Job
       .find({
@@ -34,17 +37,15 @@ module.exports = {
         }
   
         return job
-          // .update({
-          //   content: req.body.content || todoItem.content,
-          //   complete: req.body.complete || todoItem.complete,
-          // })
           .update(req.body, { fields: Object.keys(req.body) })
+
           .then(updatedJob => res.status(200).send(updatedJob))
           .catch(error => res.status(400).send(error));
       })
       .catch(error => res.status(400).send(error));
   },
   
+  //delete a job by id for a resume id
   destroy(req, res) {
     return Job
       .find({

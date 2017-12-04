@@ -2,6 +2,8 @@ const Resume = require('../models').Resume;
 const Job = require('../models').Job;
 
 module.exports = {
+
+  //create a resume
   create(req, res) {
     return Resume
       .create({
@@ -16,10 +18,9 @@ module.exports = {
       })
       .then(resume => res.status(201).send(resume))
       .catch(error => res.status(400).send(error));
-
-
   },
 
+  //list all resumes
   list(req, res) {
     return Resume
       .findAll({
@@ -32,6 +33,7 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
+  //get a resume by id
   retrieve(req, res) {
     return Resume
       .findById(req.params.resumeId, {
@@ -51,6 +53,7 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
 
+  //update a resume by id
   update(req, res) {
     return Resume
       .findById(req.params.resumeId, {
@@ -66,16 +69,15 @@ module.exports = {
           });
         }
         return resume
-          // .update({
-          //   title: req.body.title || todo.title,
-          // })
           .update(req.body, { fields: Object.keys(req.body) })
+
           .then(() => res.status(200).send(resume))  // Send back the updated todo.
           .catch((error) => res.status(400).send(error));
       })
       .catch((error) => res.status(400).send(error));
   },
 
+  //delete a resume by id
   destroy(req, res) {
     return Resume
       .findById(req.params.resumeId)
