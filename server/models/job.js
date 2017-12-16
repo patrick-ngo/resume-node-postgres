@@ -11,6 +11,12 @@ module.exports = (sequelize, DataTypes) => {
     //period of employment
     period: DataTypes.STRING,
 
+    //start of employment
+    start: DataTypes.STRING,
+
+    //end of employment
+    end: DataTypes.STRING,
+
     //industry type
     industry: DataTypes.STRING,
 

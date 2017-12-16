@@ -8,6 +8,8 @@ module.exports = {
       .create({
         title: req.body.title,
         company: req.body.company,
+        start: req.body.start,
+        end: req.body.end,
         period: req.body.period,
         industry: req.body.industry,
         location: req.body.location,
