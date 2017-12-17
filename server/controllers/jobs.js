@@ -6,6 +6,8 @@ module.exports = {
   create(req, res) {
     return Job
       .create({
+
+        //basic info
         title: req.body.title,
         company: req.body.company,
         start: req.body.start,
@@ -15,6 +17,9 @@ module.exports = {
         location: req.body.location,
         description: req.body.description,
         current: req.body.current,
+
+        //image
+        imageUrl: req.body.imageUrl,
 
         resumeId: req.params.resumeId,
       })

@@ -7,14 +7,23 @@ module.exports = {
   create(req, res) {
     return Resume
       .create({
+
+        //basic info
         name: req.body.name,
-        profileImage: req.body.profileImage,
-        bannerImage: req.body.bannerImage,
         title: req.body.title,
         education: req.body.education,
         location: req.body.location,
         summary: req.body.summary,
-        bannerImage2: req.body.bannerImage2,
+
+        //images
+        profileImage: req.body.profileImage,
+        bannerImage: req.body.bannerImage,
+
+        //contact info
+        contactSummary: req.body.contactSummary,
+        contactNumber: req.body.contactNumber,
+        email: req.body.email,
+        
       })
       .then(resume => res.status(201).send(resume))
       .catch(error => res.status(400).send(error));

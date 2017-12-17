@@ -27,7 +27,11 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
 
     //if the job is current or not
-    current: DataTypes.BOOLEAN
+    current: DataTypes.BOOLEAN,
+
+    //image of the company
+    imageUrl: DataTypes.STRING,
+
   }, {
     classMethods: {
       // associate: function(models) {

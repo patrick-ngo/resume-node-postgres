@@ -25,6 +25,16 @@ module.exports = (sequelize, DataTypes) => {
 
     //summary text
     summary: DataTypes.STRING,
+
+    //contact summary
+    contactSummary: DataTypes.STRING,
+
+    //contact number
+    contactNumber: DataTypes.STRING,
+
+    //email
+    email: DataTypes.STRING,
+
   }, {
     classMethods: {
       // associate: function(models) {
