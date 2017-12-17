@@ -46,6 +46,12 @@ module.exports = (sequelize, DataTypes) => {
           as: 'jobs',
         });
       },
+      associate: (models) => {
+        Resume.hasMany(models.Education, {
+          foreignKey: 'resumeId',
+          as: 'educations',
+        });
+      },
     }
   });
   return Resume;
