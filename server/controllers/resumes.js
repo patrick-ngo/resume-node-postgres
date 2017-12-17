@@ -53,10 +53,16 @@ module.exports = {
   retrieve(req, res) {
     return Resume
       .findById(req.params.resumeId, {
-        include: [{
-          model: Job,
-          as: 'jobs',
-        }],
+        include: [
+          {
+            model: Job,
+            as: 'jobs',
+          },
+          {
+            model: Education,
+            as: 'educations',
+          }
+        ],
       })
       .then(resume => {
         if (!resume) {
@@ -73,10 +79,16 @@ module.exports = {
   update(req, res) {
     return Resume
       .findById(req.params.resumeId, {
-        include: [{
-          model: Job,
-          as: 'jobs',
-        }],
+        include: [
+          {
+            model: Job,
+            as: 'jobs',
+          },
+          {
+            model: Education,
+            as: 'educations',
+          }
+        ],
       })
       .then(resume => {
         if (!resume) {
