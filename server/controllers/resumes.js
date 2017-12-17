@@ -1,5 +1,6 @@
 const Resume = require('../models').Resume;
 const Job = require('../models').Job;
+const Education = require('../models').Education;
 
 module.exports = {
 
@@ -33,10 +34,16 @@ module.exports = {
   list(req, res) {
     return Resume
       .findAll({
-        include: [{
-          model: Job,
-          as: 'jobs',
-        }],
+          include: [
+          {
+            model: Job,
+            as: 'jobs',
+          },
+          {
+            model: Education,
+            as: 'educations',
+          }
+        ],
       })
       .then(resumes => res.status(200).send(resumes))
       .catch(error => res.status(400).send(error));

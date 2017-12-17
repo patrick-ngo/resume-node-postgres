@@ -37,16 +37,13 @@ module.exports = (sequelize, DataTypes) => {
 
   }, {
     classMethods: {
-      // associate: function(models) {
-      //   // associations can be defined here
-      // }
       associate: (models) => {
+        // associations can be defined here
         Resume.hasMany(models.Job, {
           foreignKey: 'resumeId',
           as: 'jobs',
         });
-      },
-      associate: (models) => {
+
         Resume.hasMany(models.Education, {
           foreignKey: 'resumeId',
           as: 'educations',

@@ -14,12 +14,12 @@ module.exports = (sequelize, DataTypes) => {
     resumeId: DataTypes.INTEGER
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: (models) => {
         Education.belongsTo(models.Resume, {
           foreignKey: 'resumeId',
           onDelete: 'CASCADE',
         });
-      }
+      },
     }
   });
   return Education;
